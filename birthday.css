@@ -1,0 +1,174 @@
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: blue;
+}
+
+.card
+{
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+}
+
+.card:hover
+{
+    transform: perspective(2500px) rotate(5deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2), 0 10px 100px rgba(0,0,0,0.4);
+}
+
+.card:hover .front
+{
+    transform: rotateY(-160deg);
+}
+
+.card:hover .happy
+{
+    visibility: hidden;
+}
+
+.front
+{
+    position: relative;
+    background-color: white;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2), 30px 0 50px rgba(0,0,0,0.4);
+    transition: 0.8s; /*0.6*/
+}
+
+.happy
+{
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+    margin: 30px;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.ballon
+{
+    position: absolute;
+}
+
+.ballon1, .ballon2, .ballon3, .ballon4
+{
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+}
+
+.ballon1
+{
+    background-color: rgba(239, 71, 111, 0.7);
+}
+
+.ballon2
+{
+    background-color: rgba(6, 214, 160, 0.7);
+    left: 50px;
+    top: 50px;
+}
+
+.ballon3
+{
+    background-color: rgba(255, 209, 102, 0.7);
+    left: 110px;
+    top: 90px;
+}
+
+.ballon4
+{
+    background-color: rgba(17, 138, 178, 0.7);
+    left: 170px;
+    top: 80px;
+}
+
+.ballon1::before, .ballon2::before, .ballon3::before, .ballon4::before
+{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: #ffd166;
+    top: 95px;
+    left: 43px;
+}
+
+.ballon1::after, .ballon2::after, .ballon3::after, .ballon4::after
+{
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+}
+
+.ballon1::after
+{
+    border-bottom: 10px solid #ef476f;
+}
+
+.ballon2::after
+{
+    border-bottom: 10px solid #06d6a0;
+}
+
+.ballon3::after
+{
+    border-bottom: 10px solid #ffd166;
+}
+
+.ballon4::after
+{
+    border-bottom: 10px solid #118ab2;
+}
+
+.inside
+{
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 350px;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+    z-index: -1;
+}
+
+p
+{
+    font-family: 'Brush Script MT', cursive;
+    font-size: 17px;
+    margin: 40px;
+    color: #333;
+}
+
+.name
+{
+    position: absolute;
+    left: 130px;
+    top: 220px;
+    color: rgb(115, 0, 0); /*#333*/
+    font-size: 20px;
+}
+
+.back
+{
+    font-family: Tahoma, sans-serif;
+    color: #333;
+    text-align: center;
+    margin: 30px;
+    outline-color: #333;
+    outline-style: dotted;
+}
